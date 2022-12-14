@@ -1,9 +1,9 @@
 import { NestFactory } from '@nestjs/core';
-import { UserModule } from './modules/user/User.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { AppModule } from '@src/App.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(UserModule);
+  const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder()
     .setTitle('Pokemon API')
