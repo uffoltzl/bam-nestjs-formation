@@ -18,4 +18,8 @@ export class PlayerService {
       new PlayerEntity({ id: uuidv4(), pseudo }),
     );
   }
+
+  async getPlayer(id: string): Promise<PlayerEntity | null> {
+    return this.playerRepository.findById(id);
+  }
 }
