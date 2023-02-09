@@ -12,12 +12,12 @@ export class PlayerDAO extends BaseEntity {
   }
 
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column({
     type: 'varchar',
     length: 255,
-    nullable: true,
+    nullable: false,
   })
-  pseudo: string;
+  pseudo!: string;
 }
