@@ -1,14 +1,14 @@
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity('user')
-export class UserDAO extends BaseEntity {
-  constructor(params?: { id: string; username: string }) {
+@Entity('player')
+export class PlayerDAO extends BaseEntity {
+  constructor(params?: { id: string; pseudo: string }) {
     super();
     if (!params) {
       return;
     }
     this.id = params.id;
-    this.username = params.username;
+    this.pseudo = params.pseudo;
   }
 
   @PrimaryGeneratedColumn('uuid')
@@ -19,5 +19,5 @@ export class UserDAO extends BaseEntity {
     length: 255,
     nullable: true,
   })
-  username: string;
+  pseudo: string;
 }

@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class CreateUserInputDTO {
+export class CreatePlayerInputDTO {
   @ApiProperty()
-  username!: string;
+  pseudo!: string;
 }
