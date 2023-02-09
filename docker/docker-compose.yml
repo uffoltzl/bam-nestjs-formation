@@ -24,6 +24,7 @@ services:
       - ./package.json:/usr/src/app/package.json
       - ./tsconfig.json:/usr/src/app/tsconfig.json
       - ./tsconfig.build.json:/usr/src/app/tsconfig.build.json
+      - ./tsconfig.migration.json:/usr/src/app/tsconfig.migration.json
     container_name: server
     profiles:
       - 'server'

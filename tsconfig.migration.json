@@ -1,0 +1,9 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      "outDir": "./dist-migration"
+    },
+    "include": ["src/**/*", "db/**/*"],
+    "exclude": ["node_modules", "dist"]
+  }
+  
