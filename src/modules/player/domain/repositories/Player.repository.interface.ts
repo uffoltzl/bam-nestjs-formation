@@ -4,5 +4,5 @@ export const PLAYER_REPOSITORY = 'PLAYER_REPOSITORY';
 
 export interface IPlayerRepository {
   findById(id: string): Promise<PlayerEntity | null>;
-  save(player: PlayerEntity): Promise<void>;
+  save(player: PlayerEntity): Promise<PlayerEntity>;
 }

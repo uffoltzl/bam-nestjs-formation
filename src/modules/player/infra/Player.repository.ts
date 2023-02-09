@@ -13,7 +13,7 @@ export class PlayerRepository implements IPlayerRepository {
     private readonly playerRepository: Repository<PlayerDAO>,
   ) {}
 
-  async findById(id: string) {
+  async findById(id: string): Promise<PlayerEntity> {
     const player = await this.playerRepository.findOneBy({ id });
 
     if (!player) {
@@ -23,7 +23,10 @@ export class PlayerRepository implements IPlayerRepository {
     return playerDAOMappers.toDomain(player);
   }
 
-  async save(player: PlayerEntity) {
-    await this.playerRepository.save(playerDAOMappers.toInfra(player));
+  async save(player: PlayerEntity): Promise<PlayerEntity> {
+    const playerDAO = await this.playerRepository.save(
+      playerDAOMappers.toInfra(player),
+    );
+    return playerDAOMappers.toDomain(playerDAO);
   }
 }
