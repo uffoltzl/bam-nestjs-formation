@@ -13,8 +13,10 @@ export class PlayerRepository implements IPlayerRepository {
     private readonly playerRepository: Repository<PlayerDAO>,
   ) {}
 
-  async findById(id: string): Promise<PlayerEntity> {
-    const player = await this.playerRepository.findOneBy({ id });
+  async findById(id: string): Promise<PlayerEntity | null> {
+    const player = await this.playerRepository.findOneBy({
+      id,
+    });
 
     if (!player) {
       return null;
