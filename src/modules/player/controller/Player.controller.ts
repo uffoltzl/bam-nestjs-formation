@@ -8,7 +8,7 @@ export class PlayerController {
   constructor(private readonly playerService: PlayerService) {}
 
   @Get()
-  create(@Query() { pseudo }: CreatePlayerInputDTO): PlayerEntity {
+  create(@Query() { pseudo }: CreatePlayerInputDTO): Promise<PlayerEntity> {
     return this.playerService.createPlayer(pseudo);
   }
 }
